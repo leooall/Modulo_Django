@@ -1,0 +1,18 @@
+python -m venv ev_desafio_guiado2                   --> creacion de entorno
+source ev_desafio_guiado2/Scripts/activate          --> activacion
+pip install django                           -> instalacion django
+python.exe -m pip install --upgrade pip
+* pip freeze > requirements-ev_desafio_guiado2.txt         -> crea un txt con los package/dependencias instalados en el ev
+django-admin startproject proy_desafio_guiado2   --> creación del proyeccto
+cd proy_desafio_guiado2                           --> ubicarse en carpeta proyecto
+python manage.py startapp seccionesApp              --> creacion de app securdarias
+INSTALLED_APPS = [                      --> vilcular app a settings.py de app principal
+    "seccionesApp",
+]
+
+
+crear funciones en views.py en la app seccionesApp
+
+agregar rutas en urls.py de la aplicacion principal
+
+python manage.py runserver              --> runserver

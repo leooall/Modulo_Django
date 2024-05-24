@@ -1,0 +1,35 @@
+python -m venv entorno1                   --> creacion de entorno
+source entorno1/Scripts/activate          --> activacion
+pip install django                           -> instalacion django
+python.exe -m pip install --upgrade pip
+pip freeze > requirements-entorno1.txt     -> crea un txt con los package/dependencias instalados en el ev
+django-admin startproject proyecto1   --> creación del proyeccto
+cd proyecto1                          --> ubicarse en app principal
+python manage.py startapp HolaMundo     --> creacion de app securdarias
+INSTALLED_APPS = [                      --> vilcular app a settings.py de app principal
+    "HolaMundo",
+]
+
+crear funciones en views.py de la aplicacion
+
+agregar rutas en urls.py de la aplicacion principal
+
+python manage.py runserver              --> runserver
+--------------------------------------------2-----------------------------------
+● Crea una nueva aplicación con nombre mascotasApp.
+python manage.py startapp mascotasApp     --> creacion de app securdarias
+● Crea una función que muestre
+a. Un título
+b. Un párrafo
+c. Una imagen o varias imágenes de tu mascota favorita.
+Recuerda que puedes utilizar las triples comillas dobles para escribir HTML
+multilínea.
+
+
+
+
+
+
+
+
+

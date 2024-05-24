@@ -93,7 +93,7 @@ django-admin startproject proyecto_de_mi_entorno   --> creación del proyeccto
 cd proyecto_de_mi_entorno                          --> ubicarse en app principal
 python manage.py startapp app_1         --> creacion de app securdarias
 python manage.py startapp app_2         --> creacion de app securdarias
-INSTALLED_APPS = [                      --> agregando app a settings de app principal
+INSTALLED_APPS = [                      --> vilcular app a settings.py de app principal
     "app_1",
     "app_2",
 ]
