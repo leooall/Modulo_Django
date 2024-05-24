@@ -1,0 +1,112 @@
+modelos = tablas 
+
+
+0. revisar pip y python.
+-Python 3.11.7
+-pip 23.3.1
+
+pip list -> ve las dependencias instaladas globalmente
+pip install django -> instala django de manera global
+pip freeze > requirements-nombre_entorno.txt -> crea un txt con los package/dependencias instalados en el ev
+pip install -r requirements.txt --> comando para instalar todos los paquetes listados en requirements.txt:
+----------------------------Etapa 1: creacion entorno virtual e instalación de dependencias---------------
+
+python -m venv vdjango   ➔ python -m venv => creación de un entorno virtual vdjango => Es el nombre del entorno virtual
+
+--------------------------activar el entorno virtual--------------------------------
+.\vdjango\Scripts\activate (powershell) (no funciona)
+
+call vdjango\Scripts\activate (cmd) (no funciono)
+
+source vdjango/Scripts/activate (gitbash) (FUNCIONAA)
+
+----------------------------------otra forma de crear entorno virtual con envwrapper (solo con CMD)----------------------------------
+pip install virtualenvwrapper-win -> instalacion envwrapper
+mkvirtualenv nombre_entorno       -> crea y activa automaticamente en ev. ojo crea la carpeta envs en el user de disco c:
+deactivate —> Salir del entorno virtual Python actual
+workon —> Listar los entornos virtuales disponibles
+workon name_of_environment —> Activar el entorno virtual Python especificado
+rmvirtualenv name_of_environment —> Borrar el entorno especificado.
+
+---------------------------------desactivar el entorno virtual -------------------------------------
+deactivate 
+    
+--------------------------instalacion y actualizacion de PIP-----------------
+2.1 pip list
+2.2 python.exe -m pip install --upgrade pip
+2.3 pip install django
+
+----------------------------creación del proyeccto--------------------------
+
+django-admin startproject myFirstproject
+django-admin startproject mysite
+
+
+--------------------------- desplegar nuestro proyecto----------------------
+4.1 acceder a la carpeta del proyecto
+cd myFirstproject
+
+---------------------------4.2 ejecutar el proyecto-------------------------
+python .\manage.py runserver
+python manage.py runserver  (funciona) (hacer clic en la ip Starting development server at http://127.0.0.1:8000/)
+
+
+nombre_proyecto
+-------nombre_app_principal
+           ---------settings.py -> configuraciones: base de datos, app, time zone
+           ---------urls.py     -> redireccion hacia controlador(view)
+-------nombre_otras_app
+
+--------------------------creacion app dentro del proyecto--------------------
+python manage.py startapp login -> crea app login dentro del proyecto
+python manage.py startapp otronameapp --> si hay que cambiar el nombre, eliminar app con clic derecho y crearla de nuevo
+
+------------------vincular a aplicacion en archivo setting de app principal------------------
+INSTALLED_APPS = [
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "otronameapp",    ----> agregar nombre de la app, para asegurarse del nombre correcto ir a script apps.py de la app y ver name
+]
+
+-----------------comandos ejercicios dia2----------
+python -m venv mi-proyecto-django           --> creacion de entorno
+source mi-proyecto-django/Scripts/activate  --> activacion
+pip install django
+django-admin startproject mysite           --> creación del proyeccto
+cd mysite                                  --> ubicarse en app principal
+python manage.py startapp pollsApp         --> creacion de app securdarias
+INSTALLED_APPS = [
+    #"pollsApp.apps.PollsappConfig",
+    "pollsApp",                           --> agregando app a settings de app principal
+]
+
+------------------------------------------------------------------------------------------------------
+python -m venv mi-entorno                   --> creacion de entorno
+source mi-entorno/Scripts/activate          --> activacion
+pip install django                           -> instalacion django
+pip freeze > requirements-mi-entorno.txt     -> crea un txt con los package/dependencias instalados en el ev
+django-admin startproject proyecto_de_mi_entorno   --> creación del proyeccto
+cd proyecto_de_mi_entorno                          --> ubicarse en app principal
+python manage.py startapp app_1         --> creacion de app securdarias
+python manage.py startapp app_2         --> creacion de app securdarias
+INSTALLED_APPS = [                      --> agregando app a settings de app principal
+    "app_1",
+    "app_2",
+]
+
+ 
+
+
+
+
+
+
+
+
+
+
+

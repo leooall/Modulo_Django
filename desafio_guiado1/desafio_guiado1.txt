@@ -1,0 +1,72 @@
+Deberás crear 5 entornos virtuales distintos con los siguientes nombres:
+1. ferretería
+2. laesquina
+3. onlyflans
+4. prestobar
+5. taller
+
+Para cada entorno virtual deberás instalar las siguientes dependencias:
+● Para el entorno de ferreteria:django 3.2.4
+pip install virtualenvwrapper-win -> instalacion envwrapper
+mkvirtualenv ferreteria
+pip install django==3.2.4  
+pip freeze > requirements-ferreteria.txt 
+
+● Para el entorno de laesquina:django en la última versión menor a 3
+
+mkvirtualenv laesquina -> creacion del entorno, crea por default la carpeta Envs en el usuario disco C:\Users\leona\Envs\laesquina
+pip install django<3.0 (NO ME FUNCIONOO)
+pip install django==2.2.28 (tuve que usar este comand)
+pip freeze > requirements-laesquina.txt
+
+● Para el entorno onlyflans django 3.2
+mkvirtualenv onlyflans
+pip install django==3.2
+pip freeze > requirements-onlyflans.txt
+
+● Para el entorno prestobar astral en su última versión disponible
+mkvirtualenv prestobar
+pip install astral
+pip freeze > requirements-prestobar.txt
+
+● Para el entorno de taller pytz en su versión 2019.3
+mkvirtualenv taller
+pip install pytz==2019.3
+pip freeze > requirements-taller.txt
+
+---------- calendariolunar------------
+mkvirtualenv calendariolunar
+
+pip install -r requirements.txt --> comando para instalar todos los paquetes listados en requirements.txt:
+asgiref==3.4.1
+astral==2.2
+certifi==2021.5.30
+chardet==4.0.0
+charset-normalizer==2.0.5
+Django==3.2.7
+django-debug-toolbar==3.2.2
+django-mathfilters==0.4.0
+djangorestframework==3.12.4
+gunicorn==20.1.0
+idna==2.7
+python-dateutil==2.8.0
+pytz==2018.4
+requests==2.26.0
+six==1.12.0
+sqlparse==0.2.4
+urllib3==1.24.2
+whitenoise==5.3.0
+
+
+pip freeze > requirements-calendariolunar.txt
+
+
+
+
+
+
+
+
+
+
+
