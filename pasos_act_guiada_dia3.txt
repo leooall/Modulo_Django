@@ -1,0 +1,60 @@
+python -m venv entorno1                   --> creacion de entorno
+source entorno1/Scripts/activate          --> activacion
+pip install django                           -> instalacion django
+python.exe -m pip install --upgrade pip
+*pip freeze > requirements-entorno1.txt     -> crea un txt con los package/dependencias instalados en el ev
+django-admin startproject proyecto1   --> creación del proyeccto
+cd proyecto1                          --> ubicarse en app principal
+python manage.py startapp HolaMundo     --> creacion de app securdarias
+INSTALLED_APPS = [                      --> vilcular app a settings.py de app principal
+    "HolaMundo",
+]
+
+crear funciones en views.py de la aplicacion - ademas traer 'from django.http import HttpResponse'
+
+en urls.py importar las views --> 'from HolaMundo.views import hola, index' y agregar las path de la aplicacion principal 
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    #path('', views.hola, name='hola')
+    path('', hola, name='hola'),
+    path('index/', index),
+    path('hola/', hola),
+]
+
+python manage.py runserver    ---> runserver
+--------------------------------------------mascotasApp-----------------------------------
+● Crea una nueva aplicación con nombre mascotasApp.
+python manage.py startapp mascotasApp     --> creacion de app securdaria
+
+● Crea una función que muestre Un título, Un párrafo y Una imagen de tu mascota favorita.--> En views.py
+
+def mascotas(request):
+    #return HttpResponse("""
+                        <h2>Esta es mi mascota</h2>
+                        <p>mi perro<p>
+                        <img src="https://img.freepik.com/fotos-premium/cachorro-joven-sonriendo-camara_1043470-52499.jpg" alt="thor">
+                        """)
+
+● en urls.py importar las views --> from mascotasApp.views import mascotas2
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    #path('', views.hola, name='hola')
+    path('', hola, name='hola'),
+    path('index/', index),
+    path('hola/', hola),
+    #path('mascotas/', mascotas),
+]
+---------------------------------------mascotas 2 con ruta index.html-------------------
+1-. cremos la carpeta 'templates' en mascotasApp
+2-. dentro de la carpeta template creamos en archivo 'index.html' con la estructura que queramos
+3-. En views.py añadimos la funcion mascotas2
+def mascotas2(request):
+    return render(request, "index.html")
+4-. en urls.py importamos el views 'from mascotasApp.views import mascotas2'
+ademas agregamos la ruta 
+urlpatterns = [
+    .....
+    .....
+    path('mascotas2/', mascotas2),
+]

@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 #from HolaMundo import views
 from HolaMundo.views import hola, index
-from mascotasApp.views import mascotas
+from mascotasApp.views import mascotas2
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -26,6 +26,6 @@ urlpatterns = [
     path('', hola, name='hola'),
     path('index/', index),
     path('hola/', hola),
-    path('mascotas/', mascotas),
-    #path('mascotas2/', mascotas2),
+    #path('mascotas/', mascotas),
+    path('mascotas2/', mascotas2),
 ]

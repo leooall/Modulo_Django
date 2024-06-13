@@ -34,7 +34,7 @@ deactivate
 --------------------------instalacion y actualizacion de PIP-----------------
 2.1 pip list
 2.2 python.exe -m pip install --upgrade pip
-2.3 pip install django
+2.3 pip install django --> python -m django version 
 
 ----------------------------creación del proyeccto--------------------------
 
